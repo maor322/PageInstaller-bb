@@ -2,13 +2,13 @@
 if (!defined('BLARG')) die(); //Nothing...
 
 $title = __("Single page installer"); //Title
-CheckPermission('admin.viewadminpanel');
-MakeCrumbs(array(actionLink("installer") => __('Single Page Installer')));
+CheckPermission('admin.viewadminpanel'); //Check that... that you're ADMIN
+MakeCrumbs(array(actionLink("installer") => __('Single Page Installer'))); //Must be...
 
-$iplugin = $_POST["iplugin"]
+$iplugin = $_POST["iplugin"] //Variable iplugin is used fir this
 ?>
 
-<!-- HTML Table --->
+<!-- HTML Table -->
 <table class="outline margin">
 		<tbody><tr class="header1">
 			<th>
@@ -25,8 +25,7 @@ $iplugin = $_POST["iplugin"]
 			</td>
 		</tr>
 </tbody></table>
-<!-- HTML Table --->
-
+<!-- HTML Table -->
 <table class="outline margin">
 		<tbody><tr class="header1">
 			<th>
@@ -66,6 +65,7 @@ move_uploaded_file($_FILES['iplugin']['tmp_name'], "pages/".$_FILES['iplugin']['
 			</td>
 </tbody></table>
 
+/* This does not work currently (Maybe on ABXD)
 <?php
 if($iplugin)
 {
@@ -74,3 +74,4 @@ if($iplugin)
 	$headerlinks->add($link); 
 }
 ?>
+*/

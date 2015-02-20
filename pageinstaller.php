@@ -1,4 +1,11 @@
 <?php
+/*
+	No Copyright you may modifiy this and use it on your board
+	And feel free... All of my project are free! StarLand 2015
+*/
+?>
+
+<?php
 if (!defined('BLARG')) die(); //Nothing...
 
 $title = __("Single page installer"); //Title

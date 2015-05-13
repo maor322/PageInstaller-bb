@@ -72,8 +72,8 @@ move_uploaded_file($_FILES['iplugin']['tmp_name'], "pages/".$_FILES['iplugin']['
 			</td>
 </tbody></table>
 
-<!-- This does not work currently (Maybe on ABXD) -->
 <?php /*
+	//This does not work currently (Maybe on ABXD)
 if($iplugin)
 {
 	$link = new actionLink("$iplugin", "", "", "", "");

@@ -1,11 +1,4 @@
 <?php
-/*
-	No Copyright you may modifiy this and use it on your board
-	And feel free... All of my project are free! StarLand 2015
-*/
-?>
-
-<?php
 if (!defined('BLARG')) die(); //Nothing...
 
 $title = __("Single page installer"); //Title
@@ -13,6 +6,8 @@ CheckPermission('admin.viewadminpanel'); //Check that... that you're ADMIN
 MakeCrumbs(array(actionLink("installer") => __('Single Page Installer'))); //Must be...
 
 $iplugin = $_POST["iplugin"] //Variable iplugin is used fir this
+
+$acceptedFormats = array('php');
 ?>
 
 <!-- HTML Table -->
@@ -42,6 +37,10 @@ $iplugin = $_POST["iplugin"] //Variable iplugin is used fir this
 		<tr class="cell0">
 			<td style="text-align:center;padding:5px;">
 			<?php echo "Run script: <b>$_FILES</b>";
+			if(!in_array(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION), $acceptedFormats))
+			{
+				Echo "It isn't a supported format.";
+			}
 			if($iplugin < 0)
 			{
 				echo "<br>No result...<br>";
